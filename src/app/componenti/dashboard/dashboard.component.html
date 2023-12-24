@@ -1,0 +1,95 @@
+<mat-toolbar color="primary" class="mat-elevation-z8">
+    <button (click)="drawer.toggle()" mat-icon-button>
+        <mat-icon>menu</mat-icon>
+    </button>
+    <span>L'Associazione Culturale E.T.S. Post Scriptum</span>
+    <span class="example-spacer"></span>
+    <button routerLink="" mat-button class="casa">Home</button>
+    <button [matMenuTriggerFor]="lvl1master" mat-button class="ticket">Biglietti</button>
+    <mat-menu #lvl1master="matMenu">
+        <button [matMenuTriggerFor]="prima" mat-menu-item>Registrati</button>
+        <button [matMenuTriggerFor]="seconda" mat-menu-item>Login</button>
+        <button [matMenuTriggerFor]="product" mat-menu-item>Prodotti</button>
+    </mat-menu>
+
+    <mat-menu #prima="matMenu">
+        <button routerLink="register" mat-menu-item>Under 18</button>
+        <button routerLink="register" mat-menu-item>Over 65</button>
+    </mat-menu>
+    <mat-menu #seconda="matMenu">
+        <button routerLink="login" mat-menu-item>Under 18</button>
+        <button routerLink="login" mat-menu-item>Over 65</button>
+    </mat-menu>
+    <mat-menu #product="matMenu">
+        <button mat-menu-item>Category</button>
+        <button [matMenuTriggerFor]="variant" mat-menu-item>Variant</button>
+        <button mat-menu-item>UOM</button>
+    </mat-menu>
+
+    <mat-menu #variant="matMenu">
+        <button mat-menu-item>Color</button>
+        <button mat-menu-item>Size</button>
+    </mat-menu>
+
+    <a href="https://www.youtube.com/channel/UCsbmVmB_or8sVLLEq4XhE_A/join" mat-raised-button color="accent">Canale Youtube</a>
+
+    <mat-icon>search</mat-icon>
+
+</mat-toolbar>
+<mat-drawer-container autosize>
+    <mat-drawer #drawer opened="false" mode="side" position="start">
+    <mat-nav-list>
+        <mat-list-item>
+            <button routerLink="" mat-button><mat-icon>home</mat-icon> Home Page</button>
+        </mat-list-item>
+        <mat-list-item>
+            <button routerLink="presentazione" mat-button><mat-icon>explore</mat-icon> Chi Siamo?</button>
+        </mat-list-item>
+		<mat-list-item>
+            <button routerLink="attivita" mat-button><mat-icon>celebration</mat-icon> Attività</button>
+        </mat-list-item>
+		<mat-list-item>
+            <button routerLink="eventi" mat-button><mat-icon>event</mat-icon> Eventi</button>
+        </mat-list-item>
+        <mat-list-item>
+            <button routerLink="contatti" mat-button><mat-icon>call</mat-icon> Contatti</button>
+        </mat-list-item>
+        <mat-list-item>
+            <button routerLink="newsletter" ><mat-icon>newspaper</mat-icon> Newsletter</button>
+        </mat-list-item>
+    </mat-nav-list>
+    </mat-drawer>
+    <mat-drawer-content>
+        <div style="text-align: center;min-height: 600px;">
+
+            <router-outlet></router-outlet>
+            </div>
+
+            <!-- footer -->
+            <footer class="footer">
+                <div class="wrapper flex">
+                  <address>
+                    <div mat-card-avatar class="image"></div>
+                   <p> <strong>Associazione</strong><br>
+                 indirizzo<br>
+                  00000 ROMA - Italy<br>
+                  Tel. <a href="tel://+39123456">+39 - 06 - 000 00 00</a><br>
+                  Fax +39 - 06 - 000 00 000<br>
+                  <a href="mailto:info@gmail.it">info.it</a></p>
+                  </address>
+                  <div class="social flex">
+                  <a href="https://www.facebook.com/" target="_blank" alt="Facebook"><div mat-card-avatar class="image"></div></a>
+                  </div>
+                </div>
+              </footer>
+
+            <!-- footer -->
+
+
+
+
+    </mat-drawer-content>
+</mat-drawer-container>
+
+
+
