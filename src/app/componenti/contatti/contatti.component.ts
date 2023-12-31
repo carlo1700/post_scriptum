@@ -1,5 +1,6 @@
 import { Component,OnInit } from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { FormGroup, FormBuilder, FormControl, Validators, NgForm, ValidatorFn } from '@angular/forms'
+import { ServicesService } from '../../services.service';
 
 @Component({
   selector: 'app-contatti',
@@ -7,24 +8,31 @@ import { FormBuilder, FormGroup } from '@angular/forms';
   styleUrl: './contatti.component.css'
 })
 export class ContattiComponent implements OnInit {
-  form: FormGroup;
+  public imgLogoPath: string = '.\\assets\\img\\WhatsApp Image 2023-12-04 at 17.59.45.jpeg';
 
-  ngOnInit(): void {
-    this.buildForm();
-  }
+  FormData: FormGroup;
+  constructor(private builder: FormBuilder, private contact: ServicesService) { }
 
-  constructor(private formBuilder: FormBuilder) {}
-
-  send(): void {
-    const { name, email, message } = this.form.value;
-    alert(`Name: ${name}, Email: ${email}, Message: ${message} `);
-  }
-
-  private buildForm(): void {
-    this.form = this.formBuilder.group({
-      name: this.formBuilder.control(null),
-      email: this.formBuilder.control(null),
-      message: this.formBuilder.control(null),
+  ngOnInit() {
+    this.FormData = this.builder.group({
+      Fullname: new FormControl('', [Validators.required]),
+      Email: new FormControl('', [Validators.compose([Validators.required, Validators.email])] as any),
+      Comment: new FormControl('', [Validators.required])
     });
   }
+
+
+  onSubmit(FormData: any) {
+    console.log(FormData)
+    this.contact.PostMessage(FormData)
+      .subscribe(response => {
+        location.href = 'https://mailthis.to/confirm'
+        console.log(response)
+      }, error => {
+        console.warn(error.responseText)
+        console.log({ error })
+      })
+  }
+
+
 }

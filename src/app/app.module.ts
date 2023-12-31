@@ -26,6 +26,9 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatMenuModule} from "@angular/material/menu";
 import {MatBadgeModule} from "@angular/material/badge";
 import {MatCardModule} from '@angular/material/card';
+import { DataService } from './services/data-service.service';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { MatInputModule } from '@angular/material/input';
 
 
 
@@ -59,9 +62,14 @@ import {MatCardModule} from '@angular/material/card';
     MatMenuModule,
     MatBadgeModule,
     MatCardModule,
+    MatInputModule,
+
+    HttpClientModule
 
   ],
-  providers: [],
+  providers: [
+    DataService
+  ],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

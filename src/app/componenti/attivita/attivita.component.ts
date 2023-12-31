@@ -7,4 +7,7 @@ import { Component } from '@angular/core';
 })
 export class AttivitaComponent {
 
+  public imgLogoPath: string = '.\\assets\\img\\WhatsApp Image 2023-12-04 at 17.59.45.jpeg';
+
+
 }

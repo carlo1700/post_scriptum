@@ -2,10 +2,6 @@
 	display: flex;
   }
 
-  .example-header-image {
-	background-image: url("source/WhatsApp Image 2023-12-04 at 17.59.45.jpeg");
-	background-size: cover;
-  }
 
   .titolo {
 	text-align: left;
@@ -14,4 +10,18 @@
 	color: #000000;
   }
 
+  .img-style {
+	height: 50px;
+	width: 50px;
+  }
+
+  .mat-mdc-card-header {
+	padding: 16px !important;
+  }
+
+.wrapper-box{
+    margin-top: 5%;
+    overflow-x: hidden !important;
+
+}
 

@@ -14,22 +14,17 @@
 	height: auto;
 }
 
-.image{
-    background-image: url("/source/WhatsApp Image 2023-12-04 at 17.59.45.jpeg");
-    background-size: cover;
-}
 
-.footer {
-    padding: 50px 0;
-    padding-top: 50px;
-    padding-right: 0px;
-    padding-bottom: 50px;
-    padding-left: 0px;
-    background-color: #4054b4;
-    color: black;
-    font-size: 17px;
-    line-height: 24px;
+
+
+.bottone {
     text-align: center;
+    margin: auto;
+    flex-grow: 1;
+    border: 2px solid #73AD21;
+    padding: 5px;
+    border-radius: 8px;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
 }
 
 

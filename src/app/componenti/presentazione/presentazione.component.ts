@@ -19,6 +19,9 @@ import { NgIf, NgFor } from '@angular/common';
 
 
 export class PresentazioneComponent {
+
+  public imgLogoPath: string = '.\\assets\\img\\WhatsApp Image 2023-12-04 at 17.59.45.jpeg';
+
   slides = [
     {img: "https://i0.wp.com/www.giacomocusano.com/wp-content/uploads/2016/07/coastal-wash-web.jpg?fit=1024%2C682&ssl=1"},
     {img: "https://www.venetoformazione.it/wp-content/uploads/2022/02/ottimizzare-immagini-display-retina.jpg"},

@@ -1,10 +1,13 @@
-<mat-card class="example-card">
+<mat-card>
 	<mat-card-header>
-	  <div mat-card-avatar class="example-header-image"></div>
-	  <mat-card-title>Presentazione</mat-card-title>
-	  <mat-card-subtitle class = "sottotitolo">About us</mat-card-subtitle>
+		<div class="flex align-items-center gap-1">
+			<img class="img" src="{{imgLogoPath}}">
+			<mat-card-title class = "titolo">Chi siamo?</mat-card-title>
+		</div>
 	</mat-card-header>
+</mat-card>
 
+<mat-card>
 	<h1 style="margin-left: 10%; margin-right: 10%;">Slide Show</h1>
 		<div style="margin-left: 10%; margin-right: 10%; margin-top: 50px;">
 			<ngx-slick-carousel class = "carousel"
